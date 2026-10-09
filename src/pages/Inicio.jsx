@@ -1,6 +1,4 @@
 import { ArrowDown, ArrowRight, ArrowUpRight, BadgeCheck, CarFront, Check, ChevronDown, Clock3, Gauge, MapPin, MessageCircle, ShieldCheck, Sparkles, Wrench } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { buttonVariants } from "@/components/ui/button"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 
@@ -57,8 +55,8 @@ function HeroSearch() {
             <ChevronDown className="size-4 text-white/35" aria-hidden="true" />
           </div>
         ))}
-        <a href="#catalogo" className={buttonVariants({ className: "min-h-[58px] rounded-xl bg-[#facc15] px-5 font-bold text-[#111] hover:bg-[#f7dc64]" })}>
-          Ver autos <ArrowRight data-icon="inline-end" />
+        <a href="#catalogo" className="inline-flex min-h-[58px] items-center justify-center gap-2 rounded-xl bg-[#facc15] px-5 font-bold text-[#111] transition hover:bg-[#f7dc64]">
+          Ver autos <ArrowRight className="size-4" aria-hidden="true" />
         </a>
       </div>
     </div>
@@ -68,22 +66,22 @@ function HeroSearch() {
 function ServiceCard({ service }) {
   const Icon = service.icon
   return (
-    <Card className="group h-full rounded-2xl border border-white/10 bg-[#171a20] text-white shadow-none transition-all duration-300 hover:-translate-y-1 hover:border-[#facc15]/45 hover:shadow-[0_16px_50px_rgba(250,204,21,.08)]">
-      <CardHeader className="p-6 pb-2 sm:p-7 sm:pb-2">
-        <div className="flex items-center justify-between">
-          <span className="flex size-12 items-center justify-center rounded-xl bg-[#facc15]/10 text-[#facc15]"><Icon className="size-5" aria-hidden="true" /></span>
-          <span className="font-display text-xs font-bold tracking-[.16em] text-white/25">{service.number}</span>
-        </div>
-        <CardTitle className="font-display pt-5 text-xl font-bold text-white">{service.title}</CardTitle>
-        <CardDescription className="text-sm leading-6 text-white/50">{service.description}</CardDescription>
-      </CardHeader>
-      <CardContent className="px-6 pb-6 pt-3 sm:px-7 sm:pb-7">
+    <div className="group h-full rounded-2xl border border-white/10 bg-[#171a20] p-6 text-white shadow-none transition-all duration-300 hover:-translate-y-1 hover:border-[#facc15]/45 hover:shadow-[0_16px_50px_rgba(250,204,21,.08)] sm:p-7">
+      <div className="flex items-center justify-between">
+        <span className="flex size-12 items-center justify-center rounded-xl bg-[#facc15]/10 text-[#facc15]">
+          <Icon className="size-5" aria-hidden="true" />
+        </span>
+        <span className="font-display text-xs font-bold tracking-[.16em] text-white/25">{service.number}</span>
+      </div>
+      <h3 className="font-display pt-5 text-xl font-bold text-white">{service.title}</h3>
+      <p className="mt-2 text-sm leading-6 text-white/50">{service.description}</p>
+      <div className="mt-4 pt-3">
         <p className="border-t border-white/10 pt-4 text-xs leading-5 text-white/40">{service.detail}</p>
         <a href={service.link} className="mt-6 inline-flex items-center gap-2 text-xs font-bold text-[#facc15] transition-all group-hover:gap-3">
           {service.action} <ArrowUpRight className="size-4" aria-hidden="true" />
         </a>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   )
 }
 
@@ -166,7 +164,9 @@ export default function Inicio() {
                 <div className="mt-7 flex flex-col gap-3">
                   {["Acompañamiento personal", "Información clara de cada vehículo", "Visítanos en Camino Internacional 3500"].map((item) => <p key={item} className="flex items-center gap-3 text-xs text-white/65"><Check className="size-4 text-[#facc15]" aria-hidden="true" />{item}</p>)}
                 </div>
-                <a href="https://wa.me/56931466279" className={buttonVariants({ size: "lg", className: "mt-8 w-fit rounded-lg bg-[#facc15] px-5 font-bold text-[#111] hover:bg-[#f7dc64]" })}>Consultar disponibilidad <ArrowUpRight data-icon="inline-end" /></a>
+                <a href="https://wa.me/56931466279" className="mt-8 inline-flex h-12 w-fit items-center gap-2 rounded-lg bg-[#facc15] px-5 font-bold text-[#111] transition hover:bg-[#f7dc64]">
+                  Consultar disponibilidad <ArrowUpRight className="size-4" aria-hidden="true" />
+                </a>
               </div>
             </div>
           </div>
@@ -200,8 +200,8 @@ export default function Inicio() {
             <div className="surface-grid relative min-h-[290px] overflow-hidden rounded-3xl border border-white/10 bg-[#11141a] p-6 sm:min-h-[340px]">
               <div className="absolute inset-0 opacity-25" aria-hidden="true"><div className="absolute left-1/4 top-[-15%] h-[130%] w-12 rotate-[28deg] border-x border-white/15 bg-white/[.025]" /><div className="absolute right-[18%] top-[-10%] h-[130%] w-9 rotate-[-42deg] border-x border-white/10 bg-white/[.025]" /><div className="absolute left-[-10%] top-[54%] h-10 w-[120%] rotate-[-12deg] border-y border-white/10 bg-white/[.02]" /></div>
               <div className="relative flex h-full min-h-[240px] flex-col justify-between sm:min-h-[290px]">
-                <span className="w-fit rounded-full border border-white/10 bg-[#0f1１１５]/9０ px-3 py-2 text-[１０px] font-semibold text-white/6０"><MapPin className="mr-１ inline size-３ text-[#facc１５]" aria-hidden="true" /> Viña del Mar · Chile</span>
-                <div className="float-soft mx-auto flex size-１４ items-center justify-center rounded-full border border-[#facc１５]/4０ bg-[#facc１５] text-[#１１１] shadow-[０_０_５５px_rgba(２５０,２０４,２１,.２５)]"><MapPin className="size-６" aria-hidden="true" /></div>
+                <span className="w-fit rounded-full border border-white/10 bg-[#0f1115]/90 px-3 py-2 text-[10px] font-semibold text-white/60"><MapPin className="mr-1 inline size-3 text-[#facc15]" aria-hidden="true" /> Viña del Mar · Chile</span>
+                <div className="float-soft mx-auto flex size-14 items-center justify-center rounded-full border border-[#facc15]/40 bg-[#facc15] text-[#111] shadow-[0_0_55px_rgba(250,204,21,.25)]"><MapPin className="size-6" aria-hidden="true" /></div>
                 <div className="flex items-end justify-between gap-4 rounded-2xl border border-white/10 bg-[#0f1115]/90 p-4 backdrop-blur">
                   <div><p className="text-[9px] font-bold uppercase tracking-[.18em] text-[#facc15]">Nuestra ubicación</p><p className="mt-1 text-sm font-bold">Camino Internacional 3500</p><p className="mt-1 text-[10px] text-white/45">Visitas presenciales cada domingo</p></div>
                   <a href="https://maps.google.com/?q=Camino+Internacional+3500+Vi%C3%B1a+del+Mar" aria-label="Ver Autos Altiva en el mapa" className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-white/10 text-white transition hover:border-[#facc15] hover:text-[#facc15]"><ArrowUpRight className="size-4" aria-hidden="true" /></a>
@@ -216,7 +216,7 @@ export default function Inicio() {
             <div className="absolute -right-10 -top-16 size-64 rounded-full border border-black/10" aria-hidden="true" /><div className="absolute -right-3 -top-9 size-48 rounded-full border border-black/10" aria-hidden="true" />
             <div className="relative grid gap-7 md:grid-cols-[1fr_auto] md:items-end">
               <div className="max-w-2xl"><p className="mb-3 flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-[.22em]"><Sparkles className="size-4" aria-hidden="true" /> Novedad Altiva</p><h2 className="font-display text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl">Un auto nuevo en tu historia.</h2><p className="mt-4 max-w-xl text-sm leading-6 text-black/65">Muy pronto podrás conocer todos los detalles del Sorteo especial de Autos Altiva.</p></div>
-              <a href="/sorte" className={buttonVariants({ size: "lg", className: "w-fit rounded-lg bg-[#111] px-5 font-bold text-white hover:bg-[#252525]" })}>Descubrir el Sorteo <ArrowRight data-icon="inline-end" /></a>
+              <a href="/sorte" className="inline-flex h-12 w-fit items-center gap-2 rounded-lg bg-[#111] px-5 font-bold text-white transition hover:bg-[#252525]">Descubrir el Sorteo <ArrowRight className="size-4" aria-hidden="true" /></a>
             </div>
           </div>
         </section>

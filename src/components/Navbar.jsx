@@ -1,5 +1,4 @@
 import { ArrowUpRight, Clock3, Sparkles } from "lucide-react"
-import { buttonVariants } from "@/components/ui/button"
 
 const links = [
   { label: "Inicio", href: "/" },
@@ -42,9 +41,9 @@ export default function Navbar({ active = "inicio" }) {
           </div>
           <a
             href="https://wa.me/56931466279"
-            className={buttonVariants({ size: "sm", className: "h-10 rounded-lg bg-[#facc15] px-4 font-bold text-[#111] hover:bg-[#f5d94f]" })}
+            className="inline-flex h-10 items-center gap-2 rounded-lg bg-[#facc15] px-4 text-xs font-bold text-[#111] transition hover:bg-[#f5d94f]"
           >
-            Hablemos <ArrowUpRight data-icon="inline-end" />
+            Hablemos <ArrowUpRight className="size-4" aria-hidden="true" />
           </a>
         </div>
 
