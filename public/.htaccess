@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  # Si el archivo o directorio existe físicamente (ej: /api/guardar_postulacion.php, imágenes, css), servirlo directo
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  # De lo contrario, redirigir a index.html para que React Router maneje la ruta
+  RewriteRule . /index.html [L]
+</IfModule>
